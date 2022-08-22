@@ -5,8 +5,8 @@ class User < ApplicationRecord
   has_many :bookings
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validates :name, :username, :password, :email, :bio, presence: true
+  validates :name, :username, :password, :email, presence: true
   validates :name, length: { minimum: 2 }
-  validates :bio, length: { minimum: 50}
+  validates :bio, length: { minimum: 10}
   validates :username, :email, uniqueness: true
 end
