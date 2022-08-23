@@ -11,8 +11,11 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <nav>
+      <%= link_to "Home", listings_path %>
+    </nav>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
   </body>
 </html>
