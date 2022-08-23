@@ -1,10 +1,16 @@
 <div class="show-listing-card">
   <h1><%= @listing.name %></h1>
+  <% @listing.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, alt: "Listing img", height:300, width:400 %>
+  <% end %>
   <p><%= @listing.description %></p>
   <p><%= @listing.category %></p>
   <p><%= @listing.price %></p>
   <p><%= @listing.rating %></p>
 </div>
-
-<%= link_to "Edit This Listing", edit_listing_path %>
-<%= link_to "Delete This Listing", listing_path(@listing), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+<% if policy(@listing).edit? %>
+  <%= link_to "Edit This Listing", edit_listing_path(@listing) %>
+<% end %>
+<% if policy(@listing).destroy? %>
+  <%= link_to "Delete This Listing", listing_path(@listing), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+<% end %>
