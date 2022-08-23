@@ -2,6 +2,7 @@
 <% @bookings.each do |booking| %>
 <div class ='listing-card'>
   <ul>
+    <li><%= booking.user_id%></li>
     <li><%= booking.listing_id%></li>
     <li><%= booking.date %></li>
     <li><%= booking.accepted %></li>
