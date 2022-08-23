@@ -1,10 +1,13 @@
-<h1>Upload your hiding place:</h1>
+
+<div class="container">
+<h1>Upload your hiding place</h1>
   <%= simple_form_for [@listing] do |f| %>
-    <%= f.input :name %>
+    <%= f.input :name%>
     <%= f.input :address %>
-    <%= f.input :category, collection: ["Indoor", "Outdoor", "Private", "Public"] %>
+    <%= f.input :category, collection: ["Indoor", "Outdoor", "Private", "Public"]%>
     <%= f.input :price %>
-    <%= f.input :image, as: :file %>
+    <%= f.file_field :photos, multiple: true %>
     <%= f.input :description %>
-    <%= f.submit %>
+    <%= f.submit "Submit place", class:"button"%>
   <% end %>
+</div>

@@ -1,0 +1,10 @@
+<div class="show-listing-card">
+  <h1><%= @listing.name %></h1>
+  <p><%= @listing.description %></p>
+  <p><%= @listing.category %></p>
+  <p><%= @listing.price %></p>
+  <p><%= @listing.rating %></p>
+</div>
+
+<%= link_to "Edit This Listing", edit_listing_path %>
+<%= link_to "Delete This Listing", listing_path(@listing), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>

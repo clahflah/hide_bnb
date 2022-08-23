@@ -1,0 +1,13 @@
+.button {
+  background: linear-gradient(70deg,  rgba(255, 231, 158, 0),  rgb(255, 216, 98));
+  width: 100%;
+  padding: 3mm;
+  border: 0mm;
+  border-radius: 2mm;
+  color: rgb(46, 46, 46);
+  font-weight: bold;
+  transition: border-radius 0.35s ease-in-out, background-color 0.60 ease-in-out;
+}
+.button:hover {
+  background-color: rgba(255, 216, 98, 0.25);
+}
