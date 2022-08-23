@@ -2,7 +2,7 @@
 <% @listings.each do |listing| %>
   <div class = "list-card">
     <ul>
-    <%# <li><%= image_tag listing.image, alt: "listing photo"%></li>
+    <li><%= cl_image_tag listing.image.key, alt: "listing photo" %></li>
     <li><%= listing.name %></li>
     <li><%= listing.description %></li>
     <li><%= listing.price %></li>
