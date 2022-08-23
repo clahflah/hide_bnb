@@ -1,4 +1,6 @@
-<h1>Upload your hiding place:</h1>
+
+<div class="container">
+<h1>Upload your hiding place</h1>
   <%= simple_form_for [@listing] do |f| %>
     <%= f.input :name %>
     <%= f.input :address %>
@@ -6,5 +8,6 @@
     <%= f.input :price %>
     <%= f.input :image %>
     <%= f.input :description %>
-    <%= f.submit %>
+    <%= f.submit "buttonText", class:"blue-button"%>
   <% end %>
+</div>
