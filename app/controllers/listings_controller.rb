@@ -24,6 +24,14 @@ class ListingsController < ApplicationController
     end
   end
 
+  def edit
+    authorize @listing
+  end
+
+  def update
+    authorize @listing
+  end
+
   def destroy
     @listing = List.find(params[:id])
     authorize @listing
