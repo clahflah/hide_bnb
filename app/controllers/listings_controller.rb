@@ -24,6 +24,21 @@ class ListingsController < ApplicationController
     end
   end
 
+  def edit
+    @listing = Listing.find(params[:id])
+    authorize @listing
+  end
+
+  def update
+    @listing = Listing.find(params[:id])
+    authorize @listing
+    if @listing.update(listing_params)
+      redirect_to listing_path(@listing)
+    else
+      render :new
+    end
+  end
+
   def destroy
     @listing = List.find(params[:id])
     authorize @listing

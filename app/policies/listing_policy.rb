@@ -10,6 +10,10 @@ class ListingPolicy < ApplicationPolicy
     true
   end
 
+  def update?
+    record.user == user
+  end
+
   def create?
     true
   end
