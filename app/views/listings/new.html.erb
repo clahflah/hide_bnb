@@ -4,7 +4,7 @@
     <%= f.input :address %>
     <%= f.input :category, collection: ["Indoor", "Outdoor", "Private", "Public"] %>
     <%= f.input :price %>
-    <%= f.input :image, as: :file %>
+    <%= f.file_field :photos, multiple: true %>
     <%= f.input :description %>
     <%= f.submit %>
   <% end %>
