@@ -79,3 +79,6 @@ end
 
 #devise gem
   gem "devise"
+
+#pundit gem for authorization
+  gem "pundit"

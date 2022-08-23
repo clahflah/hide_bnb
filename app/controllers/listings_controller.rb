@@ -30,6 +30,6 @@ class ListingsController < ApplicationController
   private
 
   def required_params
-    params.requrire(:listing).permit(:name, :address, :category, :price, :image, :rating, :description, :user_id)
+    params.requrire(:listing).permit(:name, :address, :category, :price, :image, :rating, :description)
   end
 end
