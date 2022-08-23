@@ -5,16 +5,18 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
+    authorize @listing
   end
 
   def new
     @listing = Listing.new
+    authroize @listing
   end
 
   def create
-    @user = User.find(:user_id)
     @listing = Listing.new(required_params)
-    @listing.user_id = @user
+    @listing.user = current_user
+    authorize @listing
     if @listing.save
       redirect_to listing_path(@listing)
     else
@@ -24,6 +26,7 @@ class ListingsController < ApplicationController
 
   def destroy
     @listing = List.find(params[:id])
+    authorize @listing
     @listing.delete
     redirect_to listings_path
   end
@@ -31,6 +34,6 @@ class ListingsController < ApplicationController
   private
 
   def required_params
-    params.requrire(:listing).permit(:name, :address, :category, :price, :image, :rating, :description, :user_id)
+    params.requrire(:listing).permit(:name, :address, :category, :price, :image, :rating, :description)
   end
 end
