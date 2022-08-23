@@ -14,7 +14,7 @@ class ListingsController < ApplicationController
   end
 
   def create
-    @listing = Listing.new(required_params)
+    @listing = Listing.new(listing_params)
     @listing.user = current_user
     authorize @listing
     if @listing.save
@@ -33,7 +33,7 @@ class ListingsController < ApplicationController
 
   private
 
-  def required_params
+  def listing_params
     params.requrire(:listing).permit(:name, :address, :category, :price, :image, :rating, :description)
   end
 end
