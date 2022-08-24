@@ -1,8 +1,8 @@
 <div class="show-listing-card">
   <h1><%= @listing.name %></h1>
-  <% @listing.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, alt: "Listing img", height:300, width:400 %>
-  <% end %>
+    <% @listing.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, alt: "Listing img", height:300, width:400 %>
+    <% end %>
   <p><%= @listing.description %></p>
   <p><%= @listing.category %></p>
   <p><%= @listing.price %></p>
