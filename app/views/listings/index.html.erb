@@ -10,4 +10,12 @@
     <li><%= listing.price %></li>
     </ul>
   </div>
+
 <% end %>
+
+  <div data-controller="map"
+       id="map"
+       style='width: 700px; height: 700px;'
+       data-map-markers-value="<%= @markers.to_json %>"
+       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
