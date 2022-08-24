@@ -2,9 +2,21 @@
 <% @bookings.each do |booking| %>
 <div class ='listing-card'>
   <ul>
+    <li><%= booking.user_id%></li>
     <li><%= booking.listing_id%></li>
-    <li><%= booking.date %></li>
-    <li><%= booking.accepted %></li>
+    <li><%= booking.date %> - <%= booking.end_date %></li>
+    <li>$<%= booking.price %></li>
+    <% if booking.accepted? %>
+      <li>Congrats! Booking was accepted.</li>
+    <% else %>
+      <li>Booking is pending host acceptance.</li>
+    <% end %>
+    <% if policy(booking).destroy? %>
+      <%= link_to "Delete this booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+    <% end %>
+    <% if policy(booking).edit? %>
+      <%= link_to "Edit This Booking", edit_booking_path(booking) %>
+    <% end %>
   </ul>
 </div>
 <% end %>
