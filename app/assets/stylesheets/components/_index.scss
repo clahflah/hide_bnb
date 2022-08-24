@@ -10,6 +10,22 @@
 @import "address_autocomplete";
 
 body {
-  background: linear-gradient(0deg,  rgb(30, 30, 30),  rgb(45, 45, 45));
-  height: 100vh
+  //background: linear-gradient(0deg,  rgb(30, 30, 30),  rgb(45, 45, 45));
+  height: 100vh;
+  color: black;
+}
+
+.thin-container {
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container {
+  width: 90%;
+}
+
+.listcardz {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }

@@ -2,7 +2,6 @@ class ListingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
-      # user.admin? ? scope.all : scope.where(user: user)
     end
   end
 
@@ -18,7 +17,7 @@ class ListingPolicy < ApplicationPolicy
     true
   end
 
-  def destroy
+  def destroy?
     record.user == user
   end
 end

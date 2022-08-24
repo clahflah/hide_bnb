@@ -8,6 +8,7 @@
   <p><%= @listing.price %></p>
   <p><%= @listing.rating %></p>
 </div>
+<%= link_to "Book this Listing", new_listing_booking_path(@listing) %>
 <% if policy(@listing).edit? %>
   <%= link_to "Edit This Listing", edit_listing_path(@listing) %>
 <% end %>
