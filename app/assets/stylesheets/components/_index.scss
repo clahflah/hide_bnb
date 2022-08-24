@@ -3,3 +3,11 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
+@import "form";
+@import "button";
+@import "card";
+
+body {
+  background: linear-gradient(0deg,  rgb(30, 30, 30),  rgb(45, 45, 45));
+  height: 100vh
+}
