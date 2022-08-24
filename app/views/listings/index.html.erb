@@ -12,6 +12,7 @@
       <p>  <strong><p><%= listing.price %>€</strong></p> </p>
     </div>
   </div>
+        <%= link_to "More Info...", listing_path(listing)  %>
   </div>
 
 <% end %>
@@ -23,5 +24,3 @@
        data-map-markers-value="<%= @markers.to_json %>"
        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-
-
