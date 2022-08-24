@@ -2,7 +2,7 @@ class ListingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
-      user.admin? ? scope.all : scope.where(user: user)
+      # user.admin? ? scope.all : scope.where(user: user)
     end
   end
 
