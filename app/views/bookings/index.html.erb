@@ -1,7 +1,9 @@
 <h1>Your bookings:</h1>
 <% @bookings.each do |booking| %>
+<% listing = Listing.find(booking.listing_id) %>
 <div class ='listing-card'>
   <ul>
+    <li><%= listing.name%></li>
     <li><%= booking.user_id%></li>
     <li><%= booking.listing_id%></li>
     <li><%= booking.date %> - <%= booking.end_date %></li>
