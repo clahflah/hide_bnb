@@ -12,7 +12,10 @@
       <li>Booking is pending host acceptance.</li>
     <% end %>
     <% if policy(booking).destroy? %>
-      <%= link_to "Delete this booking", @booking, method: :destroy %>
+      <%= link_to "Delete this booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+    <% end %>
+    <% if policy(booking).edit? %>
+      <%= link_to "Edit This Booking", edit_booking_path(booking) %>
     <% end %>
   </ul>
 </div>
