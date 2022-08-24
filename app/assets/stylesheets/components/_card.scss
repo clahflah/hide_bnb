@@ -1,13 +1,21 @@
-.card {
+.list-card {
 display:flex;
-border: none;
+border: 2px;
 background: white;
 border-radius: 10px;
+width: 20%
+
 
 }
 
-.card > img {
+.list-card > img {
   border-radius: 10px;
+  width: 100%;
+}
+
+.cardimg{
+
+  object-fit:cover;
 }
 
 /* .row > * {
