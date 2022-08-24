@@ -24,6 +24,22 @@ class BookingsController < ApplicationController
     @bookings = policy_scope(Booking)
   end
 
+  def edit
+    @booking = Booking.find(params[:id])
+    authorize @booking
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.price = (@booking.end_date - @booking.date) * @listing.price
+    if @booking.update(booking_params)
+      redirect_to booking_path(@booking)
+    else
+      render :new
+    end
+  end
+
   def destroy
     @booking = Booking.find(params[:id])
     authorize @booking
