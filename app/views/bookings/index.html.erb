@@ -39,7 +39,7 @@
           <% if booking.accepted? %>
             <li>Congrats! You have accepted.</li>
           <% else %>
-            <li><a href="#">Click Here To Accept</a></li>
+            <li><%= link_to "Accept this booking", booking_path(booking), data: {turbo_method: :accept, turbo_confirm: "Are you sure?"}  %></li>
           <% end %>
         </ul>
       </div>
