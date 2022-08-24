@@ -6,7 +6,12 @@
     <li><%= booking.listing_id%></li>
     <li><%= booking.date %> - <%= booking.end_date %></li>
     <li>$<%= booking.price %></li>
-    <li><%= booking.accepted %></li>
+    <% if booking.accepted? %>
+      <li>Congrats! Booking was accepted.</li>
+    <% end %>
+    <% if policy(booking).destroy? %>
+      <%= link_to "Delete this booking", @booking, method: :destroy %>
+    <% end %>
   </ul>
 </div>
 <% end %>

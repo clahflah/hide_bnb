@@ -24,6 +24,11 @@ class BookingsController < ApplicationController
     @bookings = policy_scope(Booking)
   end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+    authorize @booking
+  end
+
   private
 
   def booking_params
