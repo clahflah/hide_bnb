@@ -6,11 +6,6 @@
 // applying the clear to the div wrapping the first following radio button
 // or checkbox.
 
-body {
-  background: linear-gradient(0deg,  rgb(30, 30, 30),  rgb(45, 45, 45));
-  height: 100vh
-}
-
 h1 {
   color: white;
 }
@@ -38,6 +33,16 @@ h1 {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.container {
+.thin-container {
   width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container {
+  width: 90%;
+}
+.cardimg{
+
+  object-fit:cover;
 }
