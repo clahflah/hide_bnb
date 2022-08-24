@@ -3,12 +3,12 @@
   <h2>Bookings you have made:</h2>
   <% @bookings.each do |booking| %>
     <% listing = Listing.find(booking.listing_id) %>
+    <% host = User.find(listing.user_id) %>
       <div class ='listing-card'>
         <ul>
-          <li><%= listing.name%></li>
-          <li><%= booking.user_id%></li>
-          <li><%= booking.listing_id%></li>
-          <li><%= booking.date %> - <%= booking.end_date %></li>
+          <li>Property-<%= listing.name%></li>
+          <li>Host-<%= host.name%></li>
+          <li>From:<%= booking.date %> To: <%= booking.end_date %></li>
           <li>$<%= booking.price %></li>
           <% if booking.accepted? %>
             <li>Congrats! Booking was accepted.</li>
@@ -28,12 +28,12 @@
 <% if @received_bookings != [] %>
   <h2>Bookings at your hiding place:</h2>
   <%= @received_bookings.each do |booking| %>
+    <% user = User.find(booking.user_id) %>
     <% listing = Listing.find(booking.listing_id) %>
       <div class ='listing-card'>
         <ul>
-          <li><%= listing.name%></li>
-          <li><%= booking.user_id%></li>
-          <li><%= booking.listing_id%></li>
+          <li>Property-<%= listing.name%></li>
+          <li>Guest- <%= user.name %></li>
           <li><%= booking.date %> - <%= booking.end_date %></li>
           <li>$<%= booking.price %></li>
           <% if booking.accepted? %>
