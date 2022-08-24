@@ -22,8 +22,9 @@ class BookingsController < ApplicationController
 
   def index
     @user = current_user
-    @listing = Listing.find_by(user_id: @user.id)
+    @listing = Listing.all.where(user_id: @user.id)
     @bookings = policy_scope(Booking)
+    @received_bookings = @user.received_bookings
   end
 
   def edit

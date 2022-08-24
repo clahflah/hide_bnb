@@ -1,3 +1,6 @@
+<% if @bookings != [] %>
+
+
 <h1>Your bookings:</h1>
 <% @bookings.each do |booking| %>
 <% listing = Listing.find(booking.listing_id) %>
@@ -21,4 +24,5 @@
     <% end %>
   </ul>
 </div>
+<% end %>
 <% end %>
