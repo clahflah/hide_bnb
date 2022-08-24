@@ -13,7 +13,9 @@ class BookingsController < ApplicationController
     @booking.price = (@booking.end_date - @booking.date) * @listing.price
     authorize @booking
     @user = current_user
-    if @booking.save
+    if @user.id == @listing.user_id
+      render:new
+    elsif @booking.save
       redirect_to bookings_path
     else
       render :new
