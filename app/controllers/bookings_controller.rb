@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @user = current_user
     if @booking.save
-      redirect_to user_bookings_path(@user)
+      redirect_to bookings_path
     else
       render :new
     end
@@ -31,10 +31,11 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
+    @listing = @booking.listing
     authorize @booking
     @booking.price = (@booking.end_date - @booking.date) * @listing.price
     if @booking.update(booking_params)
-      redirect_to booking_path(@booking)
+      redirect_to bookings_path
     else
       render :new
     end
