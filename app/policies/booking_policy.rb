@@ -4,7 +4,7 @@ class BookingPolicy < ApplicationPolicy
     def resolve
       # scope.where(user: user)
       scope.all
-      user.admin? ? scope.all : scope.where(user: user) || scope.where(booking.id == @listing.id)
+      user.admin? ? scope.all : scope.where(user: user) || scope.where(id == @listing.id)
     end
   end
 

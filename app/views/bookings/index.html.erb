@@ -1,6 +1,6 @@
 <h1>Your bookings:</h1>
 <% @bookings.each do |booking| %>
-<% listing = Listing.find(booking.user_id) %>
+<% listing = Listing.find(booking.listing_id) %>
 <div class ='listing-card'>
   <ul>
     <li><%= listing.name%></li>
