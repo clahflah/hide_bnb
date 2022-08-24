@@ -22,7 +22,8 @@ body {
 .container {
   width: 90%;
 }
-.cardimg{
 
-  object-fit:cover;
+.listcardz {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }

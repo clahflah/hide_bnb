@@ -1,17 +1,17 @@
 <h1>Find your perfect Hiding Space</h1>
+<div class="listcardz">
 <% @listings.each do |listing| %>
-  <div class = "list-card">
-    <ul>
+  <div class="list-card">
+  <div>
     <% listing.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, alt: "Listing img", height:300, width:400 %>
+    <%= cl_image_tag photo.key, alt: "Listing img", height:300, width:300 %>
     <% end %>
-
 
     <div class="d-flex justify-content-between px-3 pt-3">
       <p><strong><%= listing.name %></strong> <br> <%= listing.description %></p>
       <p>  <strong><p><%= listing.price %>€</strong></p> </p>
     </div>
-
-    </ul>
+  </div>
   </div>
 <% end %>
+</div>
