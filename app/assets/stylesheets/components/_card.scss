@@ -8,8 +8,18 @@
   .list-card img {
     border-radius: 10px;
     max-width: 300px;
+    margin: auto;
 }
 
 .show-listing-card {
-  background: pink;
+  margin: auto;
+  padding-bottom: 30px;
+  img {
+    width: max-content;
+  }
+}
+
+.slc-container {
+  width: fit-content;
+  margin: auto;
 }
