@@ -10,10 +10,12 @@
 @import "address_autocomplete";
 
 body {
-  //background: linear-gradient(0deg,  rgb(30, 30, 30),  rgb(45, 45, 45));
+  // background: linear-gradient(0deg,  $background,  $background);
+  background: radial-gradient(circle, rgba(255,165,145,1) 0%, rgba(255,255,255,1) 43%);
+
   height: 100vh;
   width: 100vw;
-  color: black;
+  color: $text-color;
 }
 
 .listcardz {
