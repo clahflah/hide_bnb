@@ -1,18 +1,11 @@
 .list-card {
-
-border-radius: 10px;
-background: $background;
-margin: 10px;
-//width: 100%
-box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;}
-
-.list-card img {
   border-radius: 10px;
-  max-width: 300px;
+  background: $background;
+  margin: 10px;
+  //width: 100%
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;}
 
+  .list-card img {
+    border-radius: 10px;
+    max-width: 300px;
 }
-
-/* .row > * {
-  padding-right: 0;
-  padding-left: 0
-} */
