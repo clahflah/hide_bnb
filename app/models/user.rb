@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :listings
   has_many :bookings
   has_many :received_bookings, through: :listings, source: :bookings
+  has_one_attached :image
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :name, :username, :password, :email, presence: true

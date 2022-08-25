@@ -92,3 +92,6 @@ end
 
 #pundit gem for authorization
   gem "pundit"
+
+#pg_search gem for search bar
+  gem "pg_search"
