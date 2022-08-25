@@ -1,47 +1,77 @@
 <h1>Your bookings-</h1>
 <% if @bookings != []%>
   <h2>Bookings you have made:</h2>
-  <% @bookings.each do |booking| %>
-    <% listing = Listing.find(booking.listing_id) %>
-    <% host = User.find(listing.user_id) %>
-      <div class ='booking-card'>
-        <ul>
-          <li>Property-<%= listing.name%></li>
-          <li>Host-<%= host.name%></li>
-          <li>From:<%= booking.date %> To: <%= booking.end_date %></li>
-          <li>$<%= booking.price %></li>
-          <% if booking.accepted? %>
-            <li>Congrats! Booking was accepted.</li>
-          <% else %>
-            <li>Booking is pending host acceptance.</li>
+  <div class="bookings-container">
+    <% @bookings.each do |booking| %>
+      <% listing = Listing.find(booking.listing_id) %>
+      <% host = User.find(listing.user_id) %>
+        <div class ='booking-card'>
+          <% listing.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, alt: "Listing img", height:300, width: 600 %>
           <% end %>
-          <% if policy(booking).edit? %>
-            <%= link_to "Edit This Booking", edit_booking_path(booking), class:"btn btn-primary" %>
-          <% end %>
-          <% if policy(booking).destroy? %>
-            <%= link_to "Delete this booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger"  %>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+          <ul>
+          <div class="booking-card-text">
+              <div class="booking-card-top">
+                <li class="booking-space"><i class="fa-solid fa-house-user"></i> <%= listing.name%></li>
+                <li class="booking-host"><i class="fa-solid fa-person"></i> <%= host.name%></li>
+              </div>
+              <div class="booking-card-top">
+                <li><i class="fa-solid fa-calendar-day"></i> <%= booking.date.strftime('%b %d, %Y') %> - <%= booking.end_date.strftime('%b %d, %Y') %></li>
+                <li><i class="fa-solid fa-dollar-sign"></i> <%= booking.price %></li>
+              </div>
+              <div class="status">
+                <% if booking.accepted? %>
+                  <li><i class="fa-solid fa-champagne-glasses"></i> Congrats! Booking was accepted.</li>
+                <% else %>
+                  <li><i class="fa-solid fa-circle-pause"></i> Booking is pending host acceptance.</li>
+                <% end %>
+              </div>
+              <div class="booking-buttons">
+              <% if policy(booking).edit? %>
+                <%= link_to "Edit This Booking", edit_booking_path(booking), class:"btn btn-primary" %>
+              <% end %>
+              <% if policy(booking).destroy? %>
+                <%= link_to "Delete this booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger"  %>
+              <% end %>
+              </div>
+            </div>
+          </ul>
+        </div>
+      <% end %>
+    </div>
     <% end %>
 <% if @received_bookings != [] %>
   <h2>Bookings at your hiding place:</h2>
-  <% @received_bookings.each do |booking| %>
-    <% user = User.find(booking.user_id) %>
-    <% listing = Listing.find(booking.listing_id) %>
-      <div class ='booking-card'>
-        <ul>
-          <li>Property-<%= listing.name%></li>
-          <li>Guest- <%= user.name %></li>
-          <li><%= booking.date %> - <%= booking.end_date %></li>
-          <li>$<%= booking.price %></li>
-          <% if booking.accepted? %>
-            <li>Congrats! You have accepted.</li>
-          <% else %>
-            <li class="btn btn-success"><%= link_to "Accept this booking", booking_path(booking, accepted: true), data: {turbo_method: :patch} %></li>
+  <div class="bookings-container">
+    <% @received_bookings.each do |booking| %>
+      <% user = User.find(booking.user_id) %>
+      <% listing = Listing.find(booking.listing_id) %>
+        <div class ='booking-card'>
+          <% listing.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, alt: "Listing img", height:300, width: 600 %>
           <% end %>
-        </ul>
-      </div>
-    <% end %>
+          <ul>
+          <div class="booking-card-text">
+            <div class="booking-card-top">
+              <li class="booking-space"><i class="fa-solid fa-house-user"></i> <%= listing.name%></li>
+              <li><i class="fa-solid fa-person"></i> <%= user.name %></li>
+            </div>
+            <div class="booking-card-top">
+              <li><i class="fa-solid fa-calendar-day"></i> <%= booking.date.strftime('%b %d, %Y') %> - <%= booking.end_date.strftime('%b %d, %Y') %></li>
+              <li><i class="fa-solid fa-dollar-sign"></i> <%= booking.price %></li>
+            </div>
+            <div class="status">
+              <% if booking.accepted? %>
+                <li><i class="fa-solid fa-champagne-glasses"></i> Congrats! You have accepted.</li>
+              <% else %>
+                <div id="accept">
+                <li class="btn btn-success"><%= link_to "Accept this booking", booking_path(booking, accepted: true), data: {turbo_method: :patch} %></li>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          </ul>
+        </div>
+      <% end %>
+  </div>
 <% end %>
