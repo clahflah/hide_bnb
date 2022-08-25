@@ -31,8 +31,14 @@
 
  </div>
 
-<div id="map" style="height: 600px; width: 600px"
-     data-controller="listing_map"
-     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+ <div id="placemap"></div>
 
-</div>
+<script>
+	mapboxgl.accessToken = '<%= ENV['MAPBOX_API_KEY'] %>';
+const map = new mapboxgl.Map({
+container: 'placemap',
+style: 'mapbox://styles/mapbox/streets-v11', // style URL
+center: [-74.5, 40], // starting position [lng, lat]
+zoom: 9, // starting zoom
+});
+</script>
