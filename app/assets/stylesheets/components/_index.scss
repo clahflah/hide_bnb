@@ -12,8 +12,8 @@
 
 body {
   // background: linear-gradient(0deg,  $background,  $background);
-  background: radial-gradient(circle, rgba(255,165,145,1) 0%, rgba(255,255,255,1) 43%);
-
+  background: radial-gradient($background, $background);
+  background-position: 0, 0;
   height: 100vh;
   width: 100vw;
   color: $text-color;
