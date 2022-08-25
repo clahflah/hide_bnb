@@ -8,7 +8,7 @@ class Listing < ApplicationRecord
 
 
   pg_search_scope :search_listings,
-    against: [ :name, :category, :description ],
+    against: [ :name, :category, :description, :address ],
     using: {
       tsearch: { prefix: true }
     }
