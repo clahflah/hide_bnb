@@ -1,12 +1,23 @@
 class ListingsController < ApplicationController
   def index
-    @listings = policy_scope(Listing)
-    @markers = @listings.geocoded.map do |listing|
-      {
-        lat: listing.latitude,
-        lng: listing.longitude,
-        info_window: render_to_string(partial: "info_window", locals: {listing: listing})
-      }
+    if params[:query].present?
+      @listings = policy_scope(Listing.search_listings(params[:query]))
+      @markers = @listings.geocoded.map do |listing|
+        {
+          lat: listing.latitude,
+          lng: listing.longitude,
+          info_window: render_to_string(partial: "info_window", locals: {listing: listing})
+        }
+      end
+    else
+      @listings = policy_scope(Listing)
+      @markers = @listings.geocoded.map do |listing|
+        {
+          lat: listing.latitude,
+          lng: listing.longitude,
+          info_window: render_to_string(partial: "info_window", locals: {listing: listing})
+        }
+      end
     end
   end
 
@@ -47,10 +58,10 @@ class ListingsController < ApplicationController
   end
 
   def destroy
-    @listing = List.find(params[:id])
+    @listing = Listing.find(params[:id])
     authorize @listing
-    @listing.delete
-    redirect_to listings_path
+    @listing.destroy
+    redirect_to listings_path, status: :see_other
   end
 
   private

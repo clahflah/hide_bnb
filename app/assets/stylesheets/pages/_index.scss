@@ -1,2 +1,26 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.flex-container {
+  display: flex;
+  position: relative;
+}
+
+.map-container {
+  display: flex;
+}
+
+.container {
+  width: 100%;
+  margin: 0px 5%;
+}
+
+#map {
+  position: sticky;
+  min-width: 40%;
+}
+
+.listcardz {
+  overflow-y: scroll;
+  height: 100vh;
+}

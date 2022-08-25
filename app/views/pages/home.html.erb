@@ -1,18 +1,17 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
+<h1>Find your perfect Hiding Space</h1>
+<div class="listcardz">
+<% @listings.each do |listing| %>
+  <div class="list-card">
+  <div>
+    <% listing.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, alt: "Listing img", height:300, width:300 %>
+    <% end %>
 
-      <div class="card">
-        <img src="https://picsum.photos/300/300" alt="" class="cardimg">
-          <div class="card-text">
-            <div class="d-flex justify-content-between px-3 pt-3">
-              <p><strong>Location, State </strong><br> Guest or something <br> 13-18 oct <br><br> <strong>104€</strong> per night </p>
-              <p> &#9733; Rating </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <div class="d-flex justify-content-between px-3 pt-3">
+      <p><strong><%= listing.name %></strong> <br> <%= listing.description %></p>
+      <p>  <strong><p><%= listing.price %>€</strong></p> </p>
     </div>
   </div>
+  </div>
+<% end %>
 </div>

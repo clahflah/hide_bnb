@@ -18,7 +18,7 @@
   <body>
     <nav class="d-flex justify-content-between px-4 pt-3 pb-3 border-bottom">
       <div class="right-nav">
-      HydeBNB
+      Hiding Seek
       </div>
       <div class="middle-nav">
         <%= link_to "Home", listings_path, class:"button-text"%>
@@ -27,14 +27,19 @@
       </div>
       <div class="left-nav">
         <%= link_to "Sign Out", destroy_user_session_path, data: {"turbo-method": :delete} , class:"light-button"%>
+        <%# continue from here %>
+
+        <%# <% if user_signed_in? %>
+          <%# <%= cl_image_tag current_user.image.key, height:50, width:50, crop: :fill, style: "border-radius: 50%" %> %>
+        <%# <% end %>
       </div>
 
     </nav>
 
-    <div class="container">
+    <div class="nbs-container">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-      <%= yield %>
     </div>
+      <%= yield %>
   </body>
 </html>

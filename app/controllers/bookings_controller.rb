@@ -39,6 +39,9 @@ class BookingsController < ApplicationController
     @listing = @booking.listing
     authorize @booking
     @booking.price = (@booking.end_date - @booking.date) * @listing.price
+    if params[:accepted]
+      @booking.update(accepted: true)
+    end
     if @booking.update(booking_params)
       redirect_to bookings_path
     else
@@ -56,6 +59,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:date, :end_date)
+    params.require(:booking).permit(:date, :end_date, :accepted)
   end
 end
