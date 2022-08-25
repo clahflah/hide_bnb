@@ -5,9 +5,9 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require "open-uri"
 
-
-5.times do
+10.times do
   user = User.create(
     name: Faker::Name.name,
     email: Faker::Internet.email,
@@ -21,11 +21,14 @@
     name: Faker::Address.community,
     address: Faker::Address.full_address,
     category: Faker::House.room,
-    price: 5.30,
-    rating: 5,
+    price: rand(10..500),
+    rating: rand(1..5),
     description: "Hello this is a description",
-    image: "https://picsum.photos/200/300",
-    user_id: user.id
+    user_id: user.id,
+    latitude: Faker::Address.latitude,
+    longitude: Faker::Address.longitude
   )
+  file = URI.open("https://picsum.photos/200/300")
+  place.photos.attach(io: file, filename:"filler.jpeg",content_type: "image/jpeg")
   place.save!
 end

@@ -1,22 +1,47 @@
-<h1>Your bookings:</h1>
-<% @bookings.each do |booking| %>
-<div class ='listing-card'>
-  <ul>
-    <li><%= booking.user_id%></li>
-    <li><%= booking.listing_id%></li>
-    <li><%= booking.date %> - <%= booking.end_date %></li>
-    <li>$<%= booking.price %></li>
-    <% if booking.accepted? %>
-      <li>Congrats! Booking was accepted.</li>
-    <% else %>
-      <li>Booking is pending host acceptance.</li>
+<h1>Your bookings-</h1>
+<% if @bookings != []%>
+  <h2>Bookings you have made:</h2>
+  <% @bookings.each do |booking| %>
+    <% listing = Listing.find(booking.listing_id) %>
+    <% host = User.find(listing.user_id) %>
+      <div class ='listing-card'>
+        <ul>
+          <li>Property-<%= listing.name%></li>
+          <li>Host-<%= host.name%></li>
+          <li>From:<%= booking.date %> To: <%= booking.end_date %></li>
+          <li>$<%= booking.price %></li>
+          <% if booking.accepted? %>
+            <li>Congrats! Booking was accepted.</li>
+          <% else %>
+            <li>Booking is pending host acceptance.</li>
+          <% end %>
+          <% if policy(booking).destroy? %>
+            <%= link_to "Delete this booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+          <% end %>
+          <% if policy(booking).edit? %>
+            <%= link_to "Edit This Booking", edit_booking_path(booking) %>
+          <% end %>
+        </ul>
+      </div>
     <% end %>
-    <% if policy(booking).destroy? %>
-      <%= link_to "Delete this booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
     <% end %>
-    <% if policy(booking).edit? %>
-      <%= link_to "Edit This Booking", edit_booking_path(booking) %>
+<% if @received_bookings != [] %>
+  <h2>Bookings at your hiding place:</h2>
+  <%= @received_bookings.each do |booking| %>
+    <% user = User.find(booking.user_id) %>
+    <% listing = Listing.find(booking.listing_id) %>
+      <div class ='listing-card'>
+        <ul>
+          <li>Property-<%= listing.name%></li>
+          <li>Guest- <%= user.name %></li>
+          <li><%= booking.date %> - <%= booking.end_date %></li>
+          <li>$<%= booking.price %></li>
+          <% if booking.accepted? %>
+            <li>Congrats! You have accepted.</li>
+          <% else %>
+            <li>Pending your acceptance.</li>
+          <% end %>
+        </ul>
+      </div>
     <% end %>
-  </ul>
-</div>
 <% end %>

@@ -15,3 +15,7 @@
 <% if policy(@listing).destroy? %>
   <%= link_to "Delete This Listing", listing_path(@listing), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 <% end %>
+
+<div id="map" style="height: 600px; width: 600px"
+     data-controller="listing_map"
+     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
