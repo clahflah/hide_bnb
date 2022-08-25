@@ -27,3 +27,8 @@
   text-decoration: none;
   color: $text-color;
 }
+
+.button-text:hover {
+  font-weight: bolder;
+  color: $text-color;
+}
