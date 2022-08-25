@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>HideBnb</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -28,6 +29,7 @@
         <%= link_to "Sign Out", destroy_user_session_path, data: {"turbo-method": :delete} , class:"light-button"%>
       </div>
     </nav>
+        <%# <img src="logo.png" alt=""> %>
 
     <div class="container">
       <p class="notice"><%= notice %></p>
