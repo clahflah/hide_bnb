@@ -27,3 +27,12 @@ body {
   margin: 0 auto;
   display: none;
 }
+
+nav {
+  position: sticky;
+}
+
+a {
+  text-decoration: none !important;
+  color: black !important;
+}

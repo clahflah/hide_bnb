@@ -4,6 +4,7 @@
 .flex-container {
   display: flex;
   position: relative;
+  margin: 0 1%;
 }
 
 .map-container {
@@ -18,9 +19,24 @@
 #map {
   position: sticky;
   min-width: 40%;
+  overflow-y: hidden;
+
 }
 
 .listcardz {
   overflow-y: scroll;
   height: 100vh;
+}
+
+.search-bar {
+  width: 100%;
+  position: sticky;
+
+  .btn {
+    margin: 5px;
+  }
+}
+
+.left-side {
+  width: 100%;
 }
