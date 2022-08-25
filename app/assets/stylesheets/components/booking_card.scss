@@ -1,0 +1,17 @@
+.booking-card {
+  box-shadow: 2px 2px 2px rgba($color: #000000, $alpha: .5);
+  width: 30%;
+  border-radius: 10%;
+  margin: 10px 10px;
+  a {
+    text-decoration: none;
+    color: white
+  }
+  a:hover {
+    text-decoration: none;
+    color: white
+  }
+  li {
+    list-style: none;
+  }
+}
