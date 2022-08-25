@@ -8,6 +8,7 @@
 @import "card";
 @import "map";
 @import "address_autocomplete";
+@import "booking_card";
 
 body {
   // background: linear-gradient(0deg,  $background,  $background);
@@ -43,4 +44,11 @@ body {
 .thin-container {
   width: 50%;
   margin: 0 auto;
+nav {
+  position: sticky;
+}
+}
+a {
+  text-decoration: none !important;
+  color: black !important;
 }

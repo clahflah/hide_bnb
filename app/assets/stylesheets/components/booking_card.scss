@@ -1,0 +1,64 @@
+.booking-card {
+  box-shadow: 2px 2px 5px rgba($color: #000000, $alpha: .5);
+  width: 40%;
+  border-radius: 15px;
+  margin: 10px auto;
+  background-color: coral;
+  transition: all ease 1s;
+  a {
+    text-decoration: none;
+    color: white
+  }
+  a:hover {
+    text-decoration: none;
+    color: white
+  }
+  li {
+    list-style: none;
+  }
+  .booking-space {
+    font-size: 30px;
+  }
+  img {
+    width: 100%;
+    object-fit: cover;
+    margin: 0 auto;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 0 0;
+  }
+  .booking-card-top{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0
+  }
+  .booking-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5px;
+  }
+  .booking-card-text {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    margin: 0 auto;
+  }
+  .status {
+    padding: 5px 0;
+  }
+  ul {
+    padding-left: 0;
+    margin-left: 0;
+  }
+}
+#accept {
+  display: flex;
+  justify-content: center;
+  padding-top: 5px
+}
+
+.bookings-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
