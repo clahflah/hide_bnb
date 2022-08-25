@@ -58,10 +58,10 @@ class ListingsController < ApplicationController
   end
 
   def destroy
-    @listing = List.find(params[:id])
+    @listing = Listing.find(params[:id])
     authorize @listing
-    @listing.delete
-    redirect_to listings_path
+    @listing.destroy
+    redirect_to listings_path, status: :see_other
   end
 
   private
