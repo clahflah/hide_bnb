@@ -12,15 +12,14 @@
 
 <div class="flex-container">
   <div class="listcardz">
-  <% @listings.each do |listing| %>
+    <% @listings.each do |listing| %>
     <div class="list-card">
       <div>
         <% listing.photos.each do |photo| %>
         <%= cl_image_tag photo.key, alt: "Listing img", height:300, width:300 %>
         <% end %>
 
-
-          <div class="d-flex justify-content-between px-3 pt-3">
+          <div class="listing-card">
             <p><strong><%= listing.name %></strong> <br> <%= listing.description %></p>
             <p>  <strong><p><%= listing.price %>€</strong></p> </p>
           </div>
@@ -30,11 +29,10 @@
   <% end %>
   </div>
 
-    <div data-controller="map"
-        id="map"
-        style='width: 700px; height: 700px;'
-        data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-
+  <div data-controller="map"
+    id="map"
+      style='width: 700px; height: 700px;'
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
