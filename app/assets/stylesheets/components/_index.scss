@@ -12,20 +12,23 @@
 body {
   //background: linear-gradient(0deg,  rgb(30, 30, 30),  rgb(45, 45, 45));
   height: 100vh;
+  width: 100vw;
   color: black;
 }
 
-.thin-container {
-  width: 50%;
-  margin-right: auto;
-  margin-left: auto;
+.listcardz {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: center;
 }
 
-.container {
-  width: 90%;
-}
-
+<<<<<<< HEAD
 .listcardz {
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
+=======
+.nbs-container {
+  width: 95%;
+  margin: 0 auto;
+>>>>>>> 3ef6073cd90876ba12209fccf583bc7bc73c324c
 }
