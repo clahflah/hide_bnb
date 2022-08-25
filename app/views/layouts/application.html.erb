@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-<<<<<<< HEAD
     <title>HideBnb</title>
 
-=======
     <title>Hiding Seek</title>
->>>>>>> 9dc21281f3070c76379e134569303dd19e5586e8
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -37,16 +34,13 @@
       <div class="left-nav">
         <%= link_to "Sign Out", destroy_user_session_path, data: {"turbo-method": :delete} , class:"light-button"%>
         <%# continue from here %>
-<<<<<<< HEAD
         <% if user_signed_in? %>
           <%# <%= cl_image_tag current_user.image.key, height:50, width:50, crop: :fill, style: "border-radius: 50%" %>
         <% end %>
-=======
 
-        <%# <% if user_signed_in? %> %>
-          <%# <%= cl_image_tag current_user.image.key, height:50, width:50, crop: :fill, style: "border-radius: 50%" %> %>
-        <%# <% end %> %>
->>>>>>> 9dc21281f3070c76379e134569303dd19e5586e8
+        <%# <% if user_signed_in? %>
+          <%# <%= cl_image_tag current_user.image.key, height:50, width:50, crop: :fill, style: "border-radius: 50%" %>
+        <%# <% end %>
       </div>
 
     </nav>
@@ -56,10 +50,7 @@
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <%= yield %>
-<<<<<<< HEAD
     </div>
-=======
 
->>>>>>> 9dc21281f3070c76379e134569303dd19e5586e8
   </body>
 </html>
