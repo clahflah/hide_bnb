@@ -1,21 +1,38 @@
-<div class="show-listing-card">
-  <h1><%= @listing.name %></h1>
+<div class="slc-container">
+
+  <div class="show-listing-card ">
+
+    <h1 class="px-3 pt-3"><%= @listing.name.capitalize %></h1>
+
     <% @listing.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, alt: "Listing img", height:300, width:400 %>
+      <%= cl_image_tag photo.key, alt: "Listing img", height:300, width:400 %>
     <% end %>
-  <p><%= @listing.description %></p>
-  <p><%= @listing.category %></p>
-  <p><%= @listing.price %></p>
-  <p><%= @listing.rating %></p>
-</div>
-<%= link_to "Book this Listing", new_listing_booking_path(@listing) %>
-<% if policy(@listing).edit? %>
-  <%= link_to "Edit This Listing", edit_listing_path(@listing) %>
-<% end %>
-<% if policy(@listing).destroy? %>
-  <%= link_to "Delete This Listing", listing_path(@listing), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-<% end %>
+
+    <div class="d-flex justify-content-between">
+      <div class="px-3 pt-3">
+        <p><%= @listing.description.capitalize %>
+        <br><%= @listing.category %></p>
+      </div>
+      <div class="px-3 pt-3">
+        <p><%= @listing.price %>€/day</p>
+        <p><%= @listing.rating %></p>
+      </div>
+    </div>
+
+    <div class="text-center pt-2">
+      <%= link_to "Book this Listing", new_listing_booking_path(@listing), class: "light-button" %>
+      <% if policy(@listing).edit? %>
+        <%= link_to "Edit This Listing", edit_listing_path(@listing), class: "light-button"%>
+      <% end %>
+      <% if policy(@listing).destroy? %>
+        <%= link_to "Delete This Listing", listing_path(@listing), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} , class: "light-button"%>
+      <% end %></div>
+    </div>
+
+ </div>
 
 <div id="map" style="height: 600px; width: 600px"
      data-controller="listing_map"
      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+
+</div>

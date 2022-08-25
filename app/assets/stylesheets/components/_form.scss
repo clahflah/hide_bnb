@@ -10,7 +10,7 @@ h1 {
  // color: white;
 }
 .form-control:focus, .form-select:focus, .form:focus {
-  color: black;
+  color: $text-color;
   border-color: none ;
   box-shadow: none;
   //background: linear-gradient(70deg,  rgb(180, 180, 180),  rgb(255, 231, 158));
@@ -31,8 +31,4 @@ h1 {
   border: 0px;
   border-radius: 5px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.form-actions {
-  background: red;
 }

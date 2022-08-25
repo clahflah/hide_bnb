@@ -11,10 +11,12 @@
 @import "booking_card";
 
 body {
-  //background: linear-gradient(0deg,  rgb(30, 30, 30),  rgb(45, 45, 45));
+  // background: linear-gradient(0deg,  $background,  $background);
+  background: radial-gradient(circle, rgba(255,165,145,1) 0%, rgba(255,255,255,1) 43%);
+
   height: 100vh;
   width: 100vw;
-  color: black;
+  color: $text-color;
 }
 
 .listcardz {
@@ -23,16 +25,29 @@ body {
   justify-content: center;
 }
 
+
+.listcardz {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
 .nbs-container {
   width: 95%;
   margin: 0 auto;
   display: none;
 }
 
+.regular-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.thin-container {
+  width: 50%;
+  margin: 0 auto;
 nav {
   position: sticky;
 }
-
+}
 a {
   text-decoration: none !important;
   color: black !important;

@@ -9,8 +9,13 @@ $green: #1EDD88;
 $gray: #0E0000;
 $light-gray: #F4F4F4;
 
-$text-color: black;
-$call-to-action: yellow;
-$grey-color: grey;
-$gray-color: $grey-color;
-$background: white;
+$text-color: rgb(0, 0, 0);
+$call-to-action: grey;
+/* $grey-color: grey;
+$gray-color: $grey-color; */
+$card-background: white;
+$navbar-color: rgb(184, 184, 184);
+$background: rgb(255, 255, 255);
+$navbar-text: white;
+$gradient1: red;
+$gradient2: blue;

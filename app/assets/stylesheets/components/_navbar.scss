@@ -1,12 +1,28 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: rgb(255, 255, 255);
+nav {
+  background-color: $navbar-color;
+  color: $navbar-text
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+svg path{
+  fill: $navbar-text
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.logo {
+  width: 25px;
+  fill: $navbar-text;
+
+}
+
+.logo-text {
+  font-size: large;
+  text-decoration: none;
+  color: $navbar-text;
+  font-weight: bolder;
+}
+
+.logo-text:hover {
+
+  text-decoration: none;
+  color: $navbar-text;
+
 }
