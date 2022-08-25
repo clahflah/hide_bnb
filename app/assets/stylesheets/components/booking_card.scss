@@ -1,9 +1,9 @@
 .booking-card {
   box-shadow: 2px 2px 5px rgba($color: #000000, $alpha: .5);
-  width: 45%;
+  width: 30%;
   border-radius: 15px;
-  margin: 10px auto;
-  background-color: coral;
+  margin: 10px 20px;
+  background-color: rgb(192, 158, 119);
   transition: all ease 1s;
   a {
     text-decoration: none;
@@ -20,8 +20,8 @@
     font-size: 30px;
   }
   .pix {
-    width: 100%;
-    height: 300px;
+    width: 60vh;
+    height: 250px;
     object-fit: cover;
     margin: 0 auto;
     border-top-left-radius: 15px;
@@ -61,5 +61,10 @@
 .bookings-container {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  overflow-x: scroll;
+  width: 100%;
+}
+
+.bookings-received {
+
 }
