@@ -15,7 +15,6 @@ export default class extends Controller {
       style: 'mapbox://styles/mapbox/streets-v11',
       });
       this.#addMarkersToMap()
-      this.#addMarkersToMap()
       this.#fitMapToMarkers()
 
       this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
@@ -24,8 +23,10 @@ export default class extends Controller {
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
+      console.log(marker)
       const popup = new mapboxgl.Popup().setHTML(marker.info_window)
-      const customMarker = document.createElement("div.testicon")
+      const customMarker = document.createElement("div")
+      customMarker.className = "aaaa"
       customMarker.setAttribute('id','secondPara');
       new mapboxgl.Marker(customMarker)
         .setLngLat([ marker.lng, marker.lat ])

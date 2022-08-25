@@ -17,4 +17,10 @@
 
 #map {
   position: sticky;
+  min-width: 40%;
+}
+
+.listcardz {
+  overflow-y: scroll;
+  height: 100vh;
 }
