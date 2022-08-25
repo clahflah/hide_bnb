@@ -26,11 +26,6 @@ body {
   justify-content: center;
 }
 
-
-.listcardz {
-  display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
 .nbs-container {
   width: 95%;
   margin: 0 auto;
@@ -40,6 +35,7 @@ body {
 .regular-container {
   width: 90%;
   margin: 0 auto;
+  display: none;
 }
 
 .thin-container {
