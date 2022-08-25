@@ -1,4 +1,4 @@
-<h1>Your bookings-</h1>
+<h1 class = "title">Your bookings-</h1>
 <% if @bookings != []%>
   <h2>Bookings you have made:</h2>
   <div class="bookings-container">
@@ -6,9 +6,26 @@
       <% listing = Listing.find(booking.listing_id) %>
       <% host = User.find(listing.user_id) %>
         <div class ='booking-card'>
-          <% listing.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, alt: "Listing img", height:300, width: 600 %>
-          <% end %>
+
+          <%# <%= cl_image_tag photo.key, alt: "Listing img", height:300, width: 600 %>
+          <%# <% end %>
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <% listing.photos.each_with_index do |photo, index| %>
+                <div class="carousel-item pix <%= index == 0 ? "active" : "" %>">
+                  <img class="d-block w-100 pix" src="<%= cl_image_path photo.key, alt: "Listing img", crop: :fill %>" alt="First slide">
+                </div>
+              <% end %>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
           <ul>
           <div class="booking-card-text">
               <div class="booking-card-top">
@@ -47,9 +64,26 @@
       <% user = User.find(booking.user_id) %>
       <% listing = Listing.find(booking.listing_id) %>
         <div class ='booking-card'>
-          <% listing.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, alt: "Listing img", height:300, width: 600 %>
-          <% end %>
+          <%# <% listing.photos.each do |photo| %>
+          <%# <%= cl_image_tag photo.key, alt: "Listing img", height:300, width: 600, class:"pix" %>
+          <%# <% end %>
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <% listing.photos.each_with_index do |photo, index| %>
+                <div class="carousel-item pix <%= index == 0 ? "active" : "" %>">
+                  <img class="d-block w-100 pix" src="<%= cl_image_path photo.key, alt: "Listing img", crop: :fill %>" alt="First slide">
+                </div>
+              <% end %>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
           <ul>
           <div class="booking-card-text">
             <div class="booking-card-top">
