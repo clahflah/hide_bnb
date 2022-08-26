@@ -5,7 +5,7 @@
         <div class="carousel-inner">
           <% @listing.photos.each_with_index do |photo, index| %>
             <div class="carousel-item <%= index == 0 ? "active" : "" %>">
-              <img class="d-block w-100 show-pix" src="<%= cl_image_path photo.key,  alt: "Listing img"%>" alt="First slide">
+              <img class="d-block w-100 show-pix" src="<%= cl_image_path photo.key, alt: "Listing img"%>" alt="First slide">
             </div>
           <% end %>
         </div>
@@ -19,7 +19,7 @@
         </button>
       </div>
     </div>
-
+    <div class="px-3">
       <div class="text-container">
         <div class="show-listing-text">
           <div id ="listing-name">
@@ -46,13 +46,13 @@
           </div>
         </div>
       </div>
-
+    </div>
   </div>
 
   <div class="column2">
     <div data-controller="map"
         id="map"
-        style="height: 100%; width: 40vw"
+        style="height: 100%; width: 80vh"
         data-map-markers-value="<%= @markers.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
