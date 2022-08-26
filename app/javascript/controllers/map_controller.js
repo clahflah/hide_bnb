@@ -54,7 +54,15 @@ export default class extends Controller {
   // Run this method within the addMarkersToMap method, make it require a paramter
   // the parameter of lat will be passed to this method from the addmarler method
   focus(event) {
-    console.log("Hello! I am updtaed again")
-    console.log()
+    let el = document.getElementById(event.currentTarget.classList[0])
+    console.log("hello 2")
+
+    setTimeout(() => {
+      el.scrollIntoView({behavior: "smooth"})
+      console.log(el)
+    }, 50);
+
+    el.classList.toggle("now-active")
+
   }
 }
