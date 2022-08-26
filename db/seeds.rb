@@ -30,5 +30,9 @@ require "open-uri"
   )
   file = URI.open("https://picsum.photos/200/300")
   place.photos.attach(io: file, filename:"filler.jpeg",content_type: "image/jpeg")
+  file2 = URI.open("https://picsum.photos/200/300")
+  place.photos.attach(io: file2, filename:"filler.jpeg",content_type: "image/jpeg")
+  file3 = URI.open("https://picsum.photos/200/300")
+  place.photos.attach(io: file3, filename:"filler.jpeg",content_type: "image/jpeg")
   place.save!
 end

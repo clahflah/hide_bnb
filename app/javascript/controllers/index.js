@@ -10,8 +10,5 @@ application.register("address-autocomplete", AddressAutocompleteController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-import ListingMapController from "./listing_map_controller"
-application.register("listing-map", ListingMapController)
-
 import MapController from "./map_controller"
 application.register("map", MapController)

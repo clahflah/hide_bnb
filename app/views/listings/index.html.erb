@@ -13,7 +13,7 @@
   </div>
   <div class="listcardz">
     <% @listings.each_with_index do |listing, index| %>
-      <div class="list-card">
+      <div class="list-card" data-map-target = "<%= listing.latitude %>">
         <div id="carouselExampleControls<%= index %>" class="carousel slide" data-ride="carousel">
 
           <div class="carousel-inner">
@@ -44,9 +44,9 @@
   </div>
 </div>
   <div data-controller="map"
-    id="map"
-      style='width: 700px; height: 100vh;'
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+       id="map"
+       style='width: 700px; height: 100vh;'
+       data-map-markers-value="<%= @markers.to_json %>"
+       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>

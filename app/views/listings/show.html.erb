@@ -32,8 +32,10 @@
 </div>
 
 
-<div id="map" style="height: 600px; width: 600px"
-     data-controller="listing_map"
+<div data-controller="map"
+     id="map"
+     style="height: 600px; width: 600px"
+     data-map-markers-value="<%= @markers.to_json %>"
      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
-</div>
+
