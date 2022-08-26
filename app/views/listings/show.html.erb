@@ -5,31 +5,28 @@
     <% end %>
   </div>
 
-  <div class="columnsecond flex-row">
-    <div class="slc-container">
-      <div class="show-listing-card">
-        <div class="px-3">
-          <h1><%= @listing.name.capitalize %></h1>
-          <p><%= @listing.description.capitalize %>
-          <br><%= @listing.category %>
-          <br><%= @listing.price %>€/day
-          <br><%= @listing.rating %></p>
-        <div class= "line-height-3rem">
-        <%= link_to "Book this Listing", new_listing_booking_path(@listing), class: "light-button" %>
-        <% if policy(@listing).edit? %>
-        <br>
-        <%= link_to "Edit This Listing", edit_listing_path(@listing), class: "light-button"%>
-        <% end %>
-        <br>
-        <% if policy(@listing).destroy? %>
-        <%= link_to "Delete This Listing", listing_path(@listing), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} , class: "light-button"%>
-        <% end %>
+    <div class="columnsecond flex-row">
+        <div class="show-listing-card">
+          <div class="px-3">
+            <h1><%= @listing.name.capitalize %></h1>
+            <p><%= @listing.description.capitalize %>
+            <br><%= @listing.category %>
+            <br><%= @listing.price %>€/day
+            <br><%= @listing.rating %></p>
+          <div class= "line-height-3rem">
+          <%= link_to "Book this Listing", new_listing_booking_path(@listing), class: "light-button" %>
+          <% if policy(@listing).edit? %>
+          <br>
+          <%= link_to "Edit This Listing", edit_listing_path(@listing), class: "light-button"%>
+          <% end %>
+          <br>
+          <% if policy(@listing).destroy? %>
+          <%= link_to "Delete This Listing", listing_path(@listing), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} , class: "light-button"%>
+          <% end %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-</div>
 
 
 <div id="map" style="height: 600px; width: 600px"
