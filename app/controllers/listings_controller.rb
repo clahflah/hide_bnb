@@ -6,7 +6,8 @@ class ListingsController < ApplicationController
         {
           lat: listing.latitude,
           lng: listing.longitude,
-          info_window: render_to_string(partial: "info_window", locals: {listing: listing})
+          info_window: render_to_string(partial: "info_window", locals: {listing: listing}),
+          image_url: helpers.asset_url("logo.png")
         }
       end
     else
@@ -15,7 +16,8 @@ class ListingsController < ApplicationController
         {
           lat: listing.latitude,
           lng: listing.longitude,
-          info_window: render_to_string(partial: "info_window", locals: {listing: listing})
+          info_window: render_to_string(partial: "info_window", locals: {listing: listing}),
+          image_url: helpers.asset_url("logo.png")
         }
       end
     end
@@ -24,6 +26,12 @@ class ListingsController < ApplicationController
   def show
     @listing = Listing.find(params[:id])
     authorize @listing
+    @markers =
+      [{
+        lat: @listing.latitude,
+        lng: @listing.longitude,
+        image_url: helpers.asset_url("logo.png")
+      }]
   end
 
   def new
