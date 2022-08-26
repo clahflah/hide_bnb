@@ -26,6 +26,12 @@ class ListingsController < ApplicationController
   def show
     @listing = Listing.find(params[:id])
     authorize @listing
+    @markers =
+      [{
+        lat: @listing.latitude,
+        lng: @listing.longitude,
+        image_url: helpers.asset_url("logo.png")
+      }]
   end
 
   def new
