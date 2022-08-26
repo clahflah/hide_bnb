@@ -9,7 +9,7 @@ svg path{
 
 .logo {
   width: 25px;
-  fill: $navbar-text;
+  fill: $background;
 
 }
 
@@ -24,5 +24,9 @@ svg path{
 
   text-decoration: none;
   color: $navbar-text;
-
+}
+.middle-nav a {
+  padding: 15px 30px;
+  font-weight: bold;
+  font-size: 19px;
 }
