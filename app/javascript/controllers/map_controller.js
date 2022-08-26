@@ -26,7 +26,7 @@ export default class extends Controller {
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
       console.log(marker)
-      const popup = new mapboxgl.Popup().setHTML(marker.info_window)
+      // const popup = new mapboxgl.Popup().setHTML(marker.info_window)
       const customMarker = document.createElement("div")
       const lati = marker.lat
       customMarker.className = `${lati}`
@@ -38,9 +38,10 @@ export default class extends Controller {
       customMarker.style.color = "red"
       customMarker.style.width = "25px"
       customMarker.style.height = "25px"
+      customMarker.style.cursor = "pointer";
       new mapboxgl.Marker(customMarker)
         .setLngLat([ marker.lng, marker.lat ])
-        .setPopup(popup)
+        // .setPopup(popup)
         .addTo(this.map)
     })
   }
@@ -58,7 +59,7 @@ export default class extends Controller {
     console.log("hello 2")
 
     setTimeout(() => {
-      el.scrollIntoView({behavior: "smooth"})
+      el.scrollIntoView({behavior: "smooth", block: "center"})
       console.log(el)
     }, 50);
 
