@@ -37,9 +37,9 @@
         <% end %>
         <%# continue from here %>
 
-        <%# <% if user_signed_in? %>
-          <%# <%= cl_image_tag current_user.image.key, height:50, width:50, crop: :fill, style: "border-radius: 50%" %>
-        <%# <% end %>
+        <% if user_signed_in? == true && current_user.image.key? %>
+          <%= cl_image_tag current_user.image.key, height:50, width:50, crop: :fill, style: "border-radius: 50%; margin-left: 10px;" %>
+         <% end %>
       </div>
 
     </nav>
