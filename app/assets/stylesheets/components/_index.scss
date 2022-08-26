@@ -12,7 +12,7 @@
 @import "headings";
 
 body {
-  // background: linear-gradient(0deg,  $background,  $background);
+
   background: radial-gradient(circle, $background, $background);
 
   height: 100vh;
@@ -53,4 +53,12 @@ a {
 .button-standard {
   background-color: $search-btn !important;
   color: $background !important;
+}
+
+h1 {
+  margin: 0%;
+}
+
+.line-height-3rem {
+  line-height: 3rem;
 }
