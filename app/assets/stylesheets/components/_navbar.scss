@@ -14,7 +14,7 @@ svg path{
 }
 
 .logo-text {
-  font-size: large;
+  font-size: 2rem;
   text-decoration: none;
   color: $navbar-text;
   font-weight: bolder;
@@ -29,4 +29,16 @@ svg path{
   padding: 15px 30px;
   font-weight: bold;
   font-size: 19px;
+}
+
+.right-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
