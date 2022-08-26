@@ -13,7 +13,7 @@
   </div>
   <div class="listcardz">
     <% @listings.each_with_index do |listing, index| %>
-      <div class="list-card">
+      <div class="list-card" data-map-target = "<%= listing.latitude %>">
         <div id="carouselExampleControls<%= index %>" class="carousel slide" data-ride="carousel">
 
           <div class="carousel-inner">
