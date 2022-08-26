@@ -1,6 +1,6 @@
 .booking-card {
   box-shadow: 2px 2px 5px rgba($color: #000000, $alpha: .5);
-  width: 30%;
+  width: 400px;
   border-radius: 15px;
   margin: 10px 20px;
   background-color: rgb(192, 158, 119);
@@ -20,7 +20,7 @@
     font-size: 30px;
   }
   .pix {
-    width: 60vh;
+    width: 400px;
     height: 250px;
     object-fit: cover;
     margin: 0 auto;
@@ -43,6 +43,7 @@
     padding-right: 20px;
     padding-top: 10px;
     margin: 0 auto;
+    width: 400px;
   }
   .status {
     padding: 5px 0;

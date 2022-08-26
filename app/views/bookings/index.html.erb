@@ -63,9 +63,6 @@
       <% user = User.find(booking.user_id) %>
       <% listing = Listing.find(booking.listing_id) %>
         <div class ='booking-card'>
-          <%# <% listing.photos.each do |photo| %>
-          <%# <%= cl_image_tag photo.key, alt: "Listing img", height:300, width: 600, class:"pix" %>
-          <%# <% end %>
           <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
               <% listing.photos.each_with_index do |photo, index| %>
