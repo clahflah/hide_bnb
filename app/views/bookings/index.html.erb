@@ -44,10 +44,10 @@
               </div>
               <div class="booking-buttons">
                 <% if policy(booking).edit? %>
-                  <%= link_to "Edit This Booking", edit_booking_path(booking), class:"btn btn-primary" %>
+                  <%= link_to "Edit This Booking", edit_booking_path(booking), class:"btn edit-button" %>
                 <% end %>
                 <% if policy(booking).destroy? %>
-                  <%= link_to "Delete this booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger"  %>
+                  <%= link_to "Delete this booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn delete-button"  %>
                 <% end %>
               </div>
             </div>

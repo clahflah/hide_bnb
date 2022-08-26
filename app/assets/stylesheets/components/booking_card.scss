@@ -3,15 +3,15 @@
   width: 400px;
   border-radius: 15px;
   margin: 10px 20px;
-  background-color: rgb(192, 158, 119);
+  background-color: $card-background;
   transition: all ease 1s;
   a {
     text-decoration: none;
-    color: white
+
   }
   a:hover {
     text-decoration: none;
-    color: white
+
   }
   li {
     list-style: none;
@@ -44,6 +44,7 @@
     padding-top: 10px;
     margin: 0 auto;
     width: 400px;
+    color: $text-color
   }
   .status {
     padding: 5px 0;
@@ -64,8 +65,5 @@
   flex-direction: row;
   overflow-x: scroll;
   width: 100%;
-}
-
-.bookings-received {
-
+  background-color: $background;
 }
