@@ -28,12 +28,25 @@
 }
 
 .slc-container {
-  width: fit-content;
-  margin: auto;
-  width: 100%;
-  height: 300px;
+  width: 50%;
+  text-align: left;
 }
 
 .index-card {
   padding: 5%;
+}
+
+
+
+.columnfirst{
+  display: flex;
+  height: 100%;
+  width: 50%;
+}
+
+.columnsecond{
+  display: flex;
+ height: 100%;
+ width: 50%;
+
 }
