@@ -62,7 +62,7 @@ export default class extends Controller {
       el.scrollIntoView({behavior: "smooth", block: "center"})
       console.log(el)
     }, 50);
-
+    document.querySelector(".now-active")?.classList?.remove("now-active")
     el.classList.toggle("now-active")
 
   }
