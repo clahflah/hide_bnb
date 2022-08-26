@@ -15,7 +15,10 @@
 .container {
   width: 100%;
   margin: 0px 5%;
+  position: relative;
+  top: 10%;
 }
+
 
 #map {
   position: fixed;
