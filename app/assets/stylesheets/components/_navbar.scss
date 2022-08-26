@@ -1,6 +1,7 @@
 nav {
   background-color: $navbar-color;
-  color: $navbar-text
+  color: $navbar-text;
+  margin-bottom: 5%;
 }
 
 svg path{
@@ -8,7 +9,7 @@ svg path{
 }
 
 .logo {
-  width: 30px;
+  width: 25px;
   fill: $background;
 
 }
