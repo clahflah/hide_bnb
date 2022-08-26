@@ -41,13 +41,13 @@
 .columnfirst{
   display: flex;
   height: 100%;
-  width: 33%;
+  width: 50%;
 }
 
 .columnsecond{
   display: flex;
  height: 100%;
- width: 33%;
- min-width: fit-content;
+ width: 50%;
+ min-width: 600px;
 
 }
